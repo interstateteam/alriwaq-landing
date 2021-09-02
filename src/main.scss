@@ -1,0 +1,239 @@
+//FONT STYLES //
+@font-face {
+    font-family: "ApercuMonoProRegular";
+    src: url(../fonts/ApercuMonoPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ApercuMonoProBold";
+    src: url(../fonts/ApercuMonoPro-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "DroidArabicRegular";
+    src: url(../fonts/ArbFONTS-Droid-Arabic-Kufi.ttf) format("truetype");
+}
+@font-face {
+    font-family: "DroidArabicBold";
+    src: url(../fonts/ArbFONTS-Droid-Arabic-Kufi-Bold.ttf) format("truetype");
+}
+
+
+
+h1{
+    font-family: "ApercuMonoProRegular", sans-serif;
+    font-size:80px;
+    margin:0;
+}
+h2{
+    font-size:25px;
+    margin:20px 0;
+}
+
+
+// BRAND COLOURS //
+
+$black: #1A1A1A;
+$nav-grey: rgba(255,255,255,0.5);
+$grey: #E8E8E8;
+$pink: #CE2C70;
+$stone: #D1CDC2;
+
+html,body{
+  margin:0;
+  padding:0;
+  font-family: "ApercuMonoProRegular", sans-serif;
+}
+
+
+
+
+.container{
+    // max-width: 1440px;
+    // margin:0 auto;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav.navigation{
+    height: 220px;
+    width:100%;
+    background:$black;
+}
+
+.logo{
+    padding-left:5%;
+}
+
+ul.language{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-right:40px;
+
+    li{
+        display: inline-block;
+        margin:0 5px;
+        font-size: 16px;
+    }
+
+    span.divider{
+        display: block;
+        color:$pink;
+        width:3px;
+        height:28px;
+        background:$pink;
+        margin:0 5px;
+    }
+
+    li > a{
+        color:$nav-grey;
+        text-decoration: none;
+    }
+
+    li > a.active{
+        color:white;
+    }
+}
+
+
+main.wrapper{
+    width:100%;
+    height:calc(100vh - 220px);
+    display: flex;
+    flex-direction: row;
+    @media only screen and (max-width: 1220px) {
+        flex-direction: column;
+        overflow: scroll;
+      
+    }
+
+
+    .col_left{
+        width:70%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding:0 10%;
+
+
+        @media only screen and (max-width: 1220px) {
+            padding:20%;
+        }
+
+    }
+    .col_left.ar_content{
+        width:70%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+        h1,h2{
+            font-family: "DroidArabicRegular";
+            direction: rtl;
+        }
+       
+    }
+    .col_right{
+        background:$stone;
+        width:30%;
+        @media only screen and (max-width: 1220px) {
+           height:100%;
+           width:100%;
+        }
+        
+    }
+}
+
+
+input[type=email]{
+    border:none;
+    background-color: $grey;
+    padding:20px 30px;
+    width:100%;
+    max-width: 500px;
+}
+input[type=submit]{
+    border:none;
+    background-color: $black;
+    color: $pink;
+    padding:20px 30px;
+    font-family: "ApercuMonoProBold";
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    width: 100%;
+    margin:40px 0;
+}
+
+.pink-bar{
+    width:100%;
+    height:84px;
+    background-color: $pink;
+    position: fixed;
+    bottom:0;
+    display: flex;
+    align-items: center;
+
+    .notification-wrapper{
+        width:80%;
+        display: flex;
+        align-items:center;
+        padding-left:5%;
+    }
+
+    ul.cookie-links{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding-right:40px;
+    
+        li{
+            display: inline-block;
+            margin:0 5px;
+            font-size: 16px;
+        }
+    
+        span.divider{
+            display: block;
+            width:3px;
+            height:28px;
+            background:white;
+            margin:0 5px;
+        }
+    
+        li > a{
+            color:white;
+            text-decoration: underline;
+        }
+    
+        li > a.active{
+            color:white;
+        }
+    }
+
+    span{
+        color:$nav-grey;
+    }
+    span.close{
+        display: inline-block;
+        background: url('/public/img/close.svg');
+        height:20px;
+        width:20px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        right:5%;
+    }
+
+
+    
+}

@@ -1,0 +1,25 @@
+{
+  "name": "alriwaq-landing",
+  "version": "1.0.0",
+  "description": "Al Riwaq Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interstateteam/alriwaq-landing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interstateteam/alriwaq-landing/issues"
+  },
+  "homepage": "https://github.com/interstateteam/alriwaq-landing#readme",
+  "devDependencies": {
+    "barba.js": "^1.0.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3"
+  }
+}
