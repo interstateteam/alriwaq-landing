@@ -24,15 +24,35 @@ h1 {
   margin: 0;
 }
 
+@media only screen and (max-width: 990px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
 h2 {
   font-size: 25px;
   margin: 20px 0;
+}
+
+@media only screen and (max-width: 990px) {
+  h2 {
+    font-size: 16px;
+  }
 }
 
 html, body {
   margin: 0;
   padding: 0;
   font-family: "ApercuMonoProRegular", sans-serif;
+}
+
+body.ar {
+  font-family: "DroidArabicRegular";
+}
+
+body.ar h1, body.ar h2, body.ar p, body.ar span, body.ar a, body.ar input {
+  direction: rtl;
 }
 
 .container {
@@ -59,8 +79,20 @@ nav.navigation {
   background: #1A1A1A;
 }
 
+@media only screen and (max-width: 1220px) {
+  nav.navigation {
+    height: 150px;
+  }
+}
+
 .logo {
   padding-left: 5%;
+}
+
+@media only screen and (max-width: 1220px) {
+  .logo img {
+    max-width: 80%;
+  }
 }
 
 ul.language {
@@ -71,7 +103,7 @@ ul.language {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-right: 40px;
+  padding-right: 5%;
 }
 
 ul.language li {
@@ -117,6 +149,7 @@ main.wrapper {
         -ms-flex-direction: column;
             flex-direction: column;
     overflow: scroll;
+    height: calc(100vh - 150px);
   }
 }
 
@@ -135,12 +168,19 @@ main.wrapper .col_left {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+main.wrapper .col_left .content {
   padding: 0 10%;
 }
 
 @media only screen and (max-width: 1220px) {
   main.wrapper .col_left {
-    padding: 20%;
+    padding: 10% 0;
+    width: 100%;
+  }
+  main.wrapper .col_left .content {
+    padding: 0 5%;
   }
 }
 
@@ -169,16 +209,32 @@ main.wrapper .col_left.ar_content h1, main.wrapper .col_left.ar_content h2 {
 main.wrapper .col_right {
   background: #D1CDC2;
   width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media only screen and (max-width: 1220px) {
   main.wrapper .col_right {
     height: 100%;
     width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
 input[type=email] {
+  font-family: "ApercuMonoProRegular", sans-serif;
   border: none;
   background-color: #E8E8E8;
   padding: 20px 30px;
@@ -195,12 +251,59 @@ input[type=submit] {
   cursor: pointer;
 }
 
+form.ar_form input[type=email] {
+  font-family: "DroidArabicRegular", sans-serif;
+  border: none;
+  background-color: #E8E8E8;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 500px;
+  direction: rtl;
+}
+
+form.ar_form input[type=submit] {
+  border: none;
+  background-color: #1A1A1A;
+  color: #CE2C70;
+  padding: 20px 30px;
+  font-family: "DroidArabicBold";
+  cursor: pointer;
+  direction: rtl;
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin: 40px 0;
+}
+
+.contact-info {
+  font-family: "ApercuMonoProBold";
+  text-align: right;
+  margin-bottom: 130px;
+  width: 85%;
+}
+
+.contact-info a {
+  display: block;
+  line-height: 30px;
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.contact-info a.contact-link {
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+@media only screen and (max-width: 1220px) {
+  .contact-info {
+    text-align: left;
+    padding-left: 5%;
+    margin-top: 10%;
+  }
 }
 
 .pink-bar {
@@ -215,6 +318,7 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .pink-bar .notification-wrapper {
@@ -275,5 +379,6 @@ form {
   background-size: 100%;
   position: absolute;
   right: 5%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
