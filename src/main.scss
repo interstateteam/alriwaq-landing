@@ -1,3 +1,5 @@
+
+
 //FONT STYLES //
 @font-face {
     font-family: "ApercuMonoProRegular";
@@ -52,12 +54,11 @@ html,body{
 }
 
 body.ar{
-    font-family: "DroidArabicRegular";
+    font-family: "DroidArabicRegular", sans-serif;
     h1,h2,p,span,a, input{
         direction:rtl;
     }
 }
-
 
 
 .container{
@@ -111,10 +112,17 @@ ul.language{
         background:$pink;
         margin:0 5px;
     }
-
     li > a{
         color:$nav-grey;
         text-decoration: none;
+    }
+
+    li > a.en{
+        font-family: 'ApercuMonoProRegular', sans-serif!important;
+    }
+
+    li > a.ar{
+        font-family:'DroidArabicRegular';
     }
 
     li > a.active{
@@ -272,12 +280,13 @@ form{
     bottom:0;
     display: flex;
     align-items: center;
-    display: none;
+    color:$nav-grey;
+    padding:0 5%;
     .notification-wrapper{
-        width:80%;
+        width:90%;
         display: flex;
         align-items:center;
-        padding-left:5%;
+        justify-content: flex-end;
     }
 
     ul.cookie-links{
@@ -291,7 +300,18 @@ form{
             margin:0 5px;
             font-size: 16px;
         }
-    
+        
+        button{
+            border:0;
+            padding:0;
+            background: none;
+            font-size:inherit;
+            font-family: inherit;
+            margin-right:10px;
+            text-decoration: underline;
+            color:white;
+            cursor:pointer;
+        }
         span.divider{
             display: block;
             width:3px;
@@ -313,16 +333,34 @@ form{
     span{
         color:$nav-grey;
     }
-    span.close{
+    span.close, span.close-ar{
         display: inline-block;
         background: url('/public/img/close.svg');
         height:20px;
         width:20px;
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
+        position: fixed;
+        z-index: 1;
         right:5%;
         cursor: pointer;
     }
+
+    span.close-ar{
+        left:5%;
+    }
     
+}
+
+.pink-bar-ar{
+    justify-content: flex-end;
+    padding-right:5%;
+}
+
+.pink-bar.hide{
+    display: none;
+    pointer-events: none;
+}
+::selection{
+    color: #fff;
 }

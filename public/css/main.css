@@ -48,7 +48,7 @@ html, body {
 }
 
 body.ar {
-  font-family: "DroidArabicRegular";
+  font-family: "DroidArabicRegular", sans-serif;
 }
 
 body.ar h1, body.ar h2, body.ar p, body.ar span, body.ar a, body.ar input {
@@ -124,6 +124,14 @@ ul.language span.divider {
 ul.language li > a {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
+}
+
+ul.language li > a.en {
+  font-family: "ApercuMonoProRegular", sans-serif !important;
+}
+
+ul.language li > a.ar {
+  font-family: 'DroidArabicRegular';
 }
 
 ul.language li > a.active {
@@ -318,18 +326,21 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 5%;
 }
 
 .pink-bar .notification-wrapper {
-  width: 80%;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 5%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .pink-bar ul.cookie-links {
@@ -347,6 +358,18 @@ form {
   display: inline-block;
   margin: 0 5px;
   font-size: 16px;
+}
+
+.pink-bar ul.cookie-links button {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin-right: 10px;
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
 }
 
 .pink-bar ul.cookie-links span.divider {
@@ -370,15 +393,40 @@ form {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.pink-bar span.close {
+.pink-bar span.close, .pink-bar span.close-ar {
   display: inline-block;
   background: url("/public/img/close.svg");
   height: 20px;
   width: 20px;
   background-repeat: no-repeat;
   background-size: 100%;
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   right: 5%;
   cursor: pointer;
+}
+
+.pink-bar span.close-ar {
+  left: 5%;
+}
+
+.pink-bar-ar {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.pink-bar.hide {
+  display: none;
+  pointer-events: none;
+}
+
+::-moz-selection {
+  color: #fff;
+}
+
+::selection {
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */
