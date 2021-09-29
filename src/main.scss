@@ -270,7 +270,10 @@ input[type=submit]{
 }
 
 .reorder{
-    order:1;
+    @media only screen and (max-width: 990px) {
+        order:1;
+    }
+
 }
 
 #mc_embed_signup form {

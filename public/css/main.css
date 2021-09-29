@@ -333,10 +333,12 @@ input[type=submit] {
   }
 }
 
-.reorder {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+@media only screen and (max-width: 990px) {
+  .reorder {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 #mc_embed_signup form {
