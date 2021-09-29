@@ -21,12 +21,14 @@
 h1 {
   font-family: "ApercuMonoProRegular", sans-serif;
   font-size: 80px;
+  line-height: 100px;
   margin: 0;
 }
 
 @media only screen and (max-width: 990px) {
   h1 {
     font-size: 40px;
+    line-height: 60px;
   }
 }
 
@@ -47,12 +49,30 @@ html, body {
   font-family: "ApercuMonoProRegular", sans-serif;
 }
 
-body.ar {
-  font-family: "DroidArabicRegular", sans-serif;
+.ar {
+  font-family: "DroidArabicRegular", sans-serif !important;
 }
 
-body.ar h1, body.ar h2, body.ar p, body.ar span, body.ar a, body.ar input {
-  direction: rtl;
+.ar h1, .ar h2, .ar p, .ar span, .ar a, .ar input {
+  direction: rtl !important;
+}
+
+.ar #mc_embed_signup input {
+  direction: rtl !important;
+}
+
+.ar #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  direction: rtl !important;
+  text-align: right !important;
+  width: 100% !important;
+}
+
+.ar #mc_embed_signup div.response {
+  width: 100% !important;
+}
+
+.ar-input {
+  height: 33px !important;
 }
 
 .container {
@@ -192,6 +212,12 @@ main.wrapper .col_left .content {
   }
 }
 
+@media only screen and (max-width: 990px) {
+  main.wrapper .col_left .content {
+    width: 90%;
+  }
+}
+
 main.wrapper .col_left.ar_content {
   width: 70%;
   display: -webkit-box;
@@ -209,9 +235,25 @@ main.wrapper .col_left.ar_content {
           flex-direction: column;
 }
 
+@media only screen and (max-width: 1220px) {
+  main.wrapper .col_left.ar_content {
+    width: auto !important;
+  }
+}
+
 main.wrapper .col_left.ar_content h1, main.wrapper .col_left.ar_content h2 {
   font-family: "DroidArabicRegular";
   direction: rtl;
+}
+
+main.wrapper .col_left.ar_content .content {
+  width: 60%;
+}
+
+@media only screen and (max-width: 990px) {
+  main.wrapper .col_left.ar_content .content {
+    width: 90%;
+  }
 }
 
 main.wrapper .col_right {
@@ -241,13 +283,26 @@ main.wrapper .col_right {
   }
 }
 
+#mc_embed_signup_scroll {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+@media only screen and (max-width: 990px) {
+  #mc_embed_signup_scroll {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 input[type=email] {
   font-family: "ApercuMonoProRegular", sans-serif;
-  border: none;
+  border: none !important;
   background-color: #E8E8E8;
-  padding: 20px 30px;
-  width: 100%;
-  max-width: 500px;
+  padding: 20px 30px !important;
 }
 
 input[type=submit] {
@@ -259,24 +314,150 @@ input[type=submit] {
   cursor: pointer;
 }
 
-form.ar_form input[type=email] {
-  font-family: "DroidArabicRegular", sans-serif;
-  border: none;
-  background-color: #E8E8E8;
-  padding: 20px 30px;
-  width: 100%;
-  max-width: 500px;
-  direction: rtl;
+#mc_embed_signup #mce-success-response {
+  color: #1A1A1A;
+  display: none;
 }
 
-form.ar_form input[type=submit] {
-  border: none;
-  background-color: #1A1A1A;
-  color: #CE2C70;
-  padding: 20px 30px;
-  font-family: "DroidArabicBold";
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  padding: 20px 0 !important;
+  margin: 0 !important;
+  color: #FF0000 !important;
+  font-size: 20px !important;
+}
+
+@media only screen and (max-width: 1220px) {
+  #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+    font-size: 16px !important;
+    padding: 10px 0 20px 0 !important;
+  }
+}
+
+.reorder {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#mc_embed_signup form {
+  display: block;
+  position: relative;
+  text-align: left;
+  padding: 0 !important;
+}
+
+#mc_embed_signup input {
+  border: 1px solid #ABB0B2;
+  border-radius: 0 !important;
+  font-size: 25px !important;
+  font-weight: inherit !important;
+  color: #1A1A1A !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  #mc_embed_signup input {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  #mc_embed_signup input {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}
+
+textarea:focus, input:focus {
+  outline: none !important;
+}
+
+#mc_embed_signup .mc-field-group input {
+  text-indent: 0 !important;
+  width: 100% !important;
+  overflow: hidden;
+}
+
+#mc_embed_signup .button {
+  clear: both;
+  -webkit-transition: all 0.23s ease-in-out 0s;
+  transition: all 0.23s ease-in-out 0s;
+  height: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: auto;
+  border: none !important;
+  background-color: #1A1A1A !important;
+  color: #CE2C70 !important;
+  padding: 20px 30px !important;
+  font-family: "ApercuMonoProBold";
   cursor: pointer;
-  direction: rtl;
+}
+
+@media only screen and (max-width: 990px) {
+  #mc_embed_signup .button {
+    font-size: 16px !important;
+  }
+}
+
+#mc_embed_signup .mc-field-group {
+  clear: left;
+  position: relative;
+  width: auto !important;
+  padding-bottom: 0 !important;
+  min-height: inherit !important;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+}
+
+.flex1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #1A1A1A !important;
+  background: #D1CDC2 !important;
+}
+
+::selection {
+  color: #1A1A1A !important;
+  background: #D1CDC2 !important;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 50px #E8E8E8 inset !important;
+  font-size: 25px !important;
+}
+
+@media only screen and (max-width: 1220px) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    font-size: 16px !important;
+  }
+}
+
+#mc_embed_signup div#mce-responses {
+  float: left;
+  top: -1.4em;
+  padding: 0 !important;
+  overflow: hidden;
+  width: 100% !important;
+  margin: 0 !important;
+  clear: both;
 }
 
 form {
@@ -311,6 +492,35 @@ form {
     text-align: left;
     padding-left: 5%;
     margin-top: 10%;
+  }
+}
+
+.contact-info-ar {
+  font-family: "DroidArabicBold", sans-serif;
+  text-align: right !important;
+  direction: rtl;
+  margin-bottom: 130px;
+  width: 85% !important;
+}
+
+.contact-info-ar a {
+  display: block;
+  line-height: 30px;
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.contact-info-ar a.contact-link {
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+@media only screen and (max-width: 1220px) {
+  .contact-info-ar {
+    text-align: left;
+    padding-left: 5%;
+    margin-top: 10%;
+    width: 90% !important;
   }
 }
 
